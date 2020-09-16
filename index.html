@@ -8,5 +8,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Issue Tracker</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Issue Tracker</h1>
+    </header>
+    <main class="main">
+      <div class="add-issue" style="">
+        <div class="add-issue__description">
+          <h3>Description</h3>
+          <input
+            type="text"
+            placeholder="Description of the issue..."
+            class="add-issue__input"
+          />
+        </div>
+        <div class="add-issue__assign">
+          <h3>Assign To</h3>
+          <select class="add-issue__input" placeholder="Assign Issue To...">
+            <option value="">Username</option>
+            <option value="">Username</option>
+            <option value="">Username</option>
+            <option value="">Username</option>
+            <option value="">Username</option>
+          </select>
+        </div>
+        <div class="add-issue__priority">
+          <h3>priority</h3>
+          <select class="add-issue__input">
+            <option value="">Low</option>
+            <option value="">Medium</option>
+            <option value="">High</option>
+          </select>
+        </div>
+        <div class="add">
+          <button class="btn btn--add">Add</button>
+        </div>
+      </div>
+      <div class="current-issues" style="display: none">
+        <div class="current-issues__issue">
+          <div class="current-issues__close">Close issue</div>
+          <div class="current-issues__info"><b>Assigned</b>: Username</div>
+          <div class="current-issues__info"><b>Priority</b>: High</div>
+          <div class="current-issues__info">
+            <b>Description:</b><br /><span class="current-issues__description"
+              >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Distinctio sint obcaecati commodi. Quasi, veritatis deserunt!
+              Asperiores non voluptate maxime mollitia ad, pariatur quidem iste
+              quam perferendis ducimus explicabo est tempora.</span
+            >
+          </div>
+        </div>
+        <div class="current-issues__issue">
+          <div class="current-issues__close">Close issue</div>
+          <div class="current-issues__info"><b>Assigned</b>: Username</div>
+          <div class="current-issues__info"><b>Priority</b>: High</div>
+          <div class="current-issues__info">
+            <b>Description:</b><br /><span class="current-issues__description"
+              >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Distinctio sint obcaecati commodi. Quasi, veritatis deserunt!
+              Asperiores non voluptate maxime mollitia ad, pariatur quidem iste
+              quam perferendis ducimus explicabo est tempora.</span
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="tab-navigation">
+      <button class="btn btn--current-issues">Current Issues</button>
+      <button class="btn btn--add-issue">Current Issues</button>
+    </div>
+  </body>
 </html>

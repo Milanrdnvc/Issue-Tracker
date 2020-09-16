@@ -1,8 +1,122 @@
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --clr-primary: #007ae6;
+  --clr-bg: #f6f6f6;
+  --clr-txt: #707070;
+  --clr-secondary: #fcba02;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #eef4fb;
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+main {
+  width: 50vw;
+  height: 30vw;
+  background-color: var(--clr-bg);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 4rem;
+  color: var(--clr-primary);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  color: var(--clr-txt);
+  margin-bottom: 0.5rem;
+}
+
+.add-issue {
+  height: 100%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  &__input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+.current-issues {
+  height: 100%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: auto;
+
+  &__issue {
+    padding: 1rem;
+    border-bottom: 1px solid black;
+  }
+
+  &__info {
+    margin-bottom: 0.5rem;
+    color: var(--clr-txt);
+    font-size: 1.3rem;
+  }
+
+  &__description {
+    font-size: 1.2rem;
+  }
+
+  &__close {
+    text-align: right;
+    font-size: 1.3rem;
+    color: var(--clr-txt);
+    font-weight: bold;
+    cursor: pointer;
+    transform: translateY(50%);
+  }
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 5px;
+  font-size: 1.17rem;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.btn--add {
+  background-color: var(--clr-primary);
+  color: white;
+}
+
+.btn--current-issues {
+  color: var(--clr-primary);
+  background-color: white;
+}
+
+.btn--add-issue {
+  background-color: var(--clr-secondary);
+  color: white;
+}
+
+.tab-navigation {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
 }
