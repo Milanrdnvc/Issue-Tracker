@@ -13,6 +13,14 @@
   --clr-secondary: #fcba02;
 }
 
+select:invalid {
+  color: gray;
+}
+
+option {
+  color: initial;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -71,6 +79,7 @@ h3 {
   &__issue {
     padding: 1rem;
     border-bottom: 1px solid black;
+    position: relative;
   }
 
   &__info {
@@ -84,12 +93,13 @@ h3 {
   }
 
   &__close {
-    text-align: right;
     font-size: 1.3rem;
     color: var(--clr-txt);
     font-weight: bold;
     cursor: pointer;
-    transform: translateY(50%);
+    position: absolute;
+    top: 1rem;
+    right: 0;
   }
 }
 

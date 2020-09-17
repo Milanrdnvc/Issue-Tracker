@@ -20,24 +20,26 @@
             type="text"
             placeholder="Description of the issue..."
             class="add-issue__input"
+            required
           />
         </div>
         <div class="add-issue__assign">
           <h3>Assign To</h3>
-          <select class="add-issue__input" placeholder="Assign Issue To...">
-            <option value="">Username</option>
-            <option value="">Username</option>
-            <option value="">Username</option>
-            <option value="">Username</option>
-            <option value="">Username</option>
+          <select class="add-issue__input" required>
+            <option disabled selected>Assign Issue To...</option>
+            <option>Username</option>
+            <option>Username</option>
+            <option>Username</option>
+            <option>Username</option>
           </select>
         </div>
         <div class="add-issue__priority">
           <h3>priority</h3>
-          <select class="add-issue__input">
-            <option value="">Low</option>
-            <option value="">Medium</option>
-            <option value="">High</option>
+          <select class="add-issue__input" required>
+            <option disabled selected>Select priority...</option>
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
           </select>
         </div>
         <div class="add">
@@ -46,8 +48,10 @@
       </div>
       <div class="current-issues">
         <div class="current-issues__issue">
-          <div class="current-issues__close">Close issue</div>
-          <div class="current-issues__info"><b>Assigned</b>: Username</div>
+          <div class="current-issues__info">
+            <b>Assigned</b>: Username
+            <span class="current-issues__close">Close Issue</span>
+          </div>
           <div class="current-issues__info"><b>Priority</b>: High</div>
           <div class="current-issues__info">
             <b>Description:</b><br /><span class="current-issues__description"
@@ -59,8 +63,10 @@
           </div>
         </div>
         <div class="current-issues__issue">
-          <div class="current-issues__close">Close issue</div>
-          <div class="current-issues__info"><b>Assigned</b>: Username</div>
+          <div class="current-issues__info">
+            <b>Assigned</b>: Username
+            <span class="current-issues__close">Close Issue</span>
+          </div>
           <div class="current-issues__info"><b>Priority</b>: High</div>
           <div class="current-issues__info">
             <b>Description:</b><br /><span class="current-issues__description"
