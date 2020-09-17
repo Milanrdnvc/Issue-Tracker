@@ -26,7 +26,9 @@
         <div class="add-issue__assign">
           <h3>Assign To</h3>
           <select class="add-issue__input" required>
-            <option disabled selected>Assign Issue To...</option>
+            <option disabled selected style="color: gray">
+              Assign Issue To...
+            </option>
             <option>Username</option>
             <option>Username</option>
             <option>Username</option>
@@ -36,7 +38,9 @@
         <div class="add-issue__priority">
           <h3>priority</h3>
           <select class="add-issue__input" required>
-            <option disabled selected>Select priority...</option>
+            <option disabled selected style="color: gray">
+              Select priority...
+            </option>
             <option>Low</option>
             <option>Medium</option>
             <option>High</option>
@@ -46,38 +50,7 @@
           <button class="btn btn--add">Add</button>
         </div>
       </div>
-      <div class="current-issues">
-        <div class="current-issues__issue">
-          <div class="current-issues__info">
-            <b>Assigned</b>: Username
-            <span class="current-issues__close">Close Issue</span>
-          </div>
-          <div class="current-issues__info"><b>Priority</b>: High</div>
-          <div class="current-issues__info">
-            <b>Description:</b><br /><span class="current-issues__description"
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Distinctio sint obcaecati commodi. Quasi, veritatis deserunt!
-              Asperiores non voluptate maxime mollitia ad, pariatur quidem iste
-              quam perferendis ducimus explicabo est tempora.</span
-            >
-          </div>
-        </div>
-        <div class="current-issues__issue">
-          <div class="current-issues__info">
-            <b>Assigned</b>: Username
-            <span class="current-issues__close">Close Issue</span>
-          </div>
-          <div class="current-issues__info"><b>Priority</b>: High</div>
-          <div class="current-issues__info">
-            <b>Description:</b><br /><span class="current-issues__description"
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Distinctio sint obcaecati commodi. Quasi, veritatis deserunt!
-              Asperiores non voluptate maxime mollitia ad, pariatur quidem iste
-              quam perferendis ducimus explicabo est tempora.</span
-            >
-          </div>
-        </div>
-      </div>
+      <div class="current-issues"></div>
     </main>
     <div class="tab-navigation">
       <button class="btn btn--tab">Current Issues</button>
