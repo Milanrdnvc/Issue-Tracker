@@ -3,6 +3,7 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
+  flex-shrink: 0;
 }
 
 :root {
@@ -25,8 +26,8 @@ body {
 }
 
 main {
-  width: 50vw;
-  height: 30vw;
+  width: 900px;
+  height: 550px;
   background-color: var(--clr-bg);
   border: 1px solid black;
   border-radius: 5px;
@@ -49,6 +50,7 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  display: none;
 
   &__input {
     width: 100%;
@@ -64,6 +66,7 @@ h3 {
   flex-direction: column;
   justify-content: space-around;
   overflow: auto;
+  display: none;
 
   &__issue {
     padding: 1rem;
@@ -90,6 +93,11 @@ h3 {
   }
 }
 
+.add-issue.active,
+.current-issues.active {
+  display: flex;
+}
+
 .btn {
   padding: 0.8rem 1.8rem;
   border-radius: 5px;
@@ -104,12 +112,12 @@ h3 {
   color: white;
 }
 
-.btn--current-issues {
+.btn--tab {
   color: var(--clr-primary);
   background-color: white;
 }
 
-.btn--add-issue {
+.btn.active {
   background-color: var(--clr-secondary);
   color: white;
 }
