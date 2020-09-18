@@ -31,6 +31,9 @@ function addIssue() {
     priorityInput !== forbiddenStrings[1]
   ) {
     makeIssue(assignToInput.value, priorityInput.value, descInput.value);
+    assignToInput.value = 'Assign Issue To...';
+    priorityInput.value = 'Select priority...';
+    descInput.value = '';
     const closeBtnArray = Array.from(closeBtn);
     closeBtnArray.forEach((btn) => {
       btn.addEventListener('click', closeIssue);

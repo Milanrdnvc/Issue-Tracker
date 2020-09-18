@@ -17,6 +17,11 @@ select:invalid {
   color: gray;
 }
 
+select,
+input {
+  box-shadow: none; // Removes the red outline when we click Add btn.
+}
+
 option {
   color: initial;
 }
