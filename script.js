@@ -5,7 +5,6 @@ const currentIssuesTab = document.querySelector('.current-issues');
 const descInput = document.querySelector('.add-issue__input');
 const assignToInput = document.querySelectorAll('.add-issue__input')[1];
 const priorityInput = document.querySelectorAll('.add-issue__input')[2];
-const closeBtn = document.getElementsByClassName('current-issues__close');
 
 function switchTabs(e) {
   if (tabBtns.indexOf(e.target) === 0 || e === 'switchAfterCreation') {
@@ -34,10 +33,6 @@ function addIssue() {
     assignToInput.value = 'Assign Issue To...';
     priorityInput.value = 'Select priority...';
     descInput.value = '';
-    const closeBtnArray = Array.from(closeBtn);
-    closeBtnArray.forEach((btn) => {
-      btn.addEventListener('click', closeIssue);
-    });
   }
 }
 
@@ -54,6 +49,9 @@ function makeIssue(username, priority, desc) {
   const currentIssue = document.createElement('div');
   currentIssue.classList.add('current-issues__issue');
   currentIssue.innerHTML = issueMarkup;
+  currentIssue
+    .querySelector('.current-issues__close')
+    .addEventListener('click', closeIssue);
   currentIssuesTab.appendChild(currentIssue);
   switchTabs('switchAfterCreation');
 }
