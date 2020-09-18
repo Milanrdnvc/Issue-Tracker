@@ -39,6 +39,7 @@ main {
   background-color: var(--clr-bg);
   border: 1px solid black;
   border-radius: 5px;
+  overflow: auto;
 }
 
 h1 {
@@ -68,7 +69,7 @@ h3 {
 }
 
 .current-issues {
-  height: 100%;
+  // height: 100%; Just let it increase the height if it needs to and put overflow on main to auto.
   padding: 3rem;
   display: flex;
   flex-direction: column;
