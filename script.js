@@ -36,7 +36,8 @@ function addIssue() {
   }
 }
 
-function makeIssue(username, priority, desc, load) {
+function makeIssue(username, priority, desc, id) {
+  const issueId = String(Date.now());
   const issueMarkup = `
     <div class="current-issues__info">
       <b>Assigned</b>: ${username}
@@ -52,21 +53,33 @@ function makeIssue(username, priority, desc, load) {
   currentIssue
     .querySelector('.current-issues__close')
     .addEventListener('click', closeIssue);
+  if (id) {
+    currentIssue.id = id;
+  } else currentIssue.id = issueId;
   currentIssuesTab.appendChild(currentIssue);
   switchTabs('switchAfterCreation');
-  if (!load) {
-    saveToLocalStorage(username, priority, desc);
+  if (!id) {
+    saveToLocalStorage(username, priority, desc, issueId);
   }
 }
 
 function closeIssue(e) {
+  removeFromLocalStorage(e.target.parentElement.parentElement);
   e.target.parentElement.parentElement.remove();
 }
 
-function saveToLocalStorage(username, priority, desc) {
+function saveToLocalStorage(username, priority, desc, id) {
   const issuesArray = JSON.parse(localStorage.getItem('IssueTracker'));
-  issuesArray.push({ username, priority, desc });
+  issuesArray.push({ username, priority, desc, id });
   localStorage.setItem('IssueTracker', JSON.stringify(issuesArray));
+}
+
+function removeFromLocalStorage(issue) {
+  const issuesArray = JSON.parse(localStorage.getItem('IssueTracker'));
+  const newIssuesArray = issuesArray.filter((item) => {
+    return item.id !== issue.id;
+  });
+  localStorage.setItem('IssueTracker', JSON.stringify(newIssuesArray));
 }
 
 tabBtns.forEach((btn) => {
@@ -78,7 +91,7 @@ addBtn.addEventListener('click', addIssue);
 window.addEventListener('load', () => {
   const issuesArray = JSON.parse(localStorage.getItem('IssueTracker'));
   issuesArray.forEach((item) => {
-    makeIssue(item.username, item.priority, item.desc, true);
+    makeIssue(item.username, item.priority, item.desc, item.id);
   });
 });
 
